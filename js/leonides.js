@@ -14,10 +14,10 @@
             $('#'+id).html(data);
         });
     });
-
+setTimeout( function() {
     // $(window).scroll(function(){var newhe = $(window).scrollTop();console.log(newhe);});
 
-    setTimeout( function() {
+    
 
         let win = $(window);
         
@@ -201,7 +201,7 @@
         $('.images-up')
         .mouseenter(function() {
             $( 'p', this ).animate({ opacity: '100%'}, 800);
-            $( 'article', this ).css({transform: 'scaleX(1)'}).stop();
+            $( 'article', this ).css({transform: 'scaleX(1)'});
         })
         .mouseleave(function() {
             $( 'p', this ).animate({ opacity: '0%'}, 100);
@@ -211,7 +211,7 @@
         $('.images-left')
         .mouseenter(function() {
             $( 'p', this ).animate({ opacity: '100%'}, 800);
-            $( 'article', this ).css({transform: 'scaleX(1)'}).stop();
+            $( 'article', this ).css({transform: 'scaleX(1)'});
         })
         .mouseleave(function() {
             $( 'p', this ).animate({ opacity: '0%'}, 100);
@@ -221,7 +221,7 @@
         $('.images-right-up')
         .mouseenter(function() {
             $( 'p', this ).animate({ opacity: '100%'}, 800);
-            $( 'article', this ).css({transform: 'scaleX(1)'}).stop();
+            $( 'article', this ).css({transform: 'scaleX(1)'});
         })
         .mouseleave(function() {
             $( 'p', this ).animate({ opacity: '0%'}, 100);
@@ -231,13 +231,32 @@
         $('.images-right-down')
         .mouseenter(function() {
             $( 'p', this ).animate({ opacity: '100%'}, 800);
-            $( 'article', this ).css({transform: 'scaleX(1)'}).stop();
+            $( 'article', this ).css({transform: 'scaleX(1)'});
         })
         .mouseleave(function() {
             $( 'p', this ).animate({ opacity: '0%'}, 100);
             $( 'article', this ).css({transform: 'scaleX(0)'});
         });
+
         
-    }, 1000);
+        // Initialize and add the map
+        function initMap() {
+          // The location of
+          const Presov = { lat: 49.0010546387734, lng: 21.237340021558353 };
+          // The map, centered at
+          const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 17,
+            center: Presov,
+          });
+          // The marker, positioned at Uluru
+          const marker = new google.maps.Marker({
+            position: { lat: 49.0010546387734, lng: 21.237340021558353 }, 
+            map: map,
+            icon : "./img/marker.png"
+          });
+        }
+
+        
+    }, 1500);
 
 })(jQuery)
