@@ -14,11 +14,13 @@
             $('#'+id).html(data);
         });
     });
-setTimeout( function() {
+
+    setTimeout( function() {
+
+    // How Many Scroll from Top?
     // $(window).scroll(function(){var newhe = $(window).scrollTop();console.log(newhe);});
-
-    
-
+        
+        // Variable of Window
         let win = $(window);
         
         $('#nav').find('a').on('click', function(event) {
@@ -48,16 +50,16 @@ setTimeout( function() {
         let menuFix = $('.menu-fix');
         let circleMenu = $('.menu-single-circle');
 
+        // Hidden Side Menu If Shown
         win.resize(function(){
             var newWidth = win.innerWidth();
-            if ( newWidth < 684 ) {
-                nav.animate({ top: '0' }, 800); 
-            }
+            if ( newWidth < 684 ) { nav.animate({ top: '0' }, 800); }
         });
 
         // After Click on Middle Symbol of Top Navigation
         openMenu.on('click', function(event){
             event.preventDefault();
+
             nav.animate({ top: '-50px' }, 800 ); // TOP NAVIGATION
 
             if ( win.width() < 684 ) {
@@ -80,7 +82,7 @@ setTimeout( function() {
                     $('hidden-menu').show();
                     menuFix.animate({ left: '0%'}, 1000);
                 }
-            }
+            };
 
             menuRot.on('click', function(event){
                 event.preventDefault();
@@ -92,10 +94,7 @@ setTimeout( function() {
                 closeMenu();
             });
 
-
-
-        // Shows Images & Form after Scrolling
-
+        // Variables of Sections
         let offset = '50';
         let about = $('#about').offset().top + 70;
         let offer = $('#offer').offset().top + offset;
@@ -104,7 +103,8 @@ setTimeout( function() {
         let partners = $('#partners').offset().top + offset;
         let contact = $('#contact').offset().top + offset;
 
-            // Show Hide Social-media icons & Selected Menu Section
+            // Show & Hide Social-media icons after scrolling 
+            // & add Class Selection ID Section on Page if we're right now here
             let sm = $('.social-media');
 
             win.scroll( function() {
@@ -119,6 +119,7 @@ setTimeout( function() {
                 if ( win.scrollTop() >= contact ) { $('#nav').find('li:nth-child(7)').addClass('selected').siblings('li').removeClass('selected') };  
             });
 
+        // FadeIn & SlideIn Images of Sections
         win.scroll( function() {
             if ( win.scrollTop() >= about ) 
             { 
@@ -167,7 +168,8 @@ setTimeout( function() {
                 setTimeout( function() {
                     $('.contact-slide-3').css({top:'73%', opacity: '100%'});}, 600);
             };
-            // Partners FadeIn Boxes
+
+            // Partners FadeIn & SlideIn Boxes
             if ( win.width() < 684 ) {
                 return;
             } else {
@@ -254,7 +256,7 @@ setTimeout( function() {
             map: map,
             icon : "./img/marker.png"
           });
-        }
+        };
 
         
     }, 1500);
