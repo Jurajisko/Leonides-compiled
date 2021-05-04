@@ -239,25 +239,6 @@
             $( 'p', this ).animate({ opacity: '0%'}, 100);
             $( 'article', this ).css({transform: 'scaleX(0)'});
         });
-
-        
-        // Initialize and add the map
-        function initMap() {
-          // The location of
-          const Presov = { lat: 49.0010546387734, lng: 21.237340021558353 };
-          // The map, centered at
-          const map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 17,
-            center: Presov,
-          });
-          // The marker, positioned at Uluru
-          const marker = new google.maps.Marker({
-            position: { lat: 49.0010546387734, lng: 21.237340021558353 }, 
-            map: map,
-            icon : "./img/marker.png"
-          });
-        };
-
         
     }, 1500);
 
