@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Leonides</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/leonides.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    </head>
+<body>
+    <main>
+        <section id="social-media"></section>
+        <!-- End of Social-Media -->
+      
+        <section class="hidden-menu"></section>
+        <!-- End of Hidden-menu -->
+
+        <section class="container" id="nav"></section>
+        <!-- End of Navigation -->
+
+        <section id="menu"></section>
+        <!-- End of Menu -->        
+
+        <section class="container" id="header"></section>
+        <!-- End of Header -->
+
+        <section class="container" id="about"></section>
+        <!-- End of About -->
+
+        <section id="images"></section>
+        <!-- End of Images -->
+        
+        <section class="container" id="offer"></section>
+        <!-- End of Offer -->
+  
+        <section class="container" id="needs"></section>
+        <!-- End of Needs -->
+  
+        <section class="container" id="transform"></section>
+        <!-- End of Transform -->
+
+        <section class="container" id="partners"></section>
+        <!-- End of Partners -->
+
+        <div id="map"></div>
+        <!-- End of Map -->
+
+        <section class="container" id="contact"></section>
+        <!-- End of Contact -->
+
+    </main>
+
+    <script src="js/leonides.js"></script>
+
+    <script src="js/jq-prx.js"></script>
+    <script src="js/prx.js"></script>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of
+        const Presov = { lat: 49.0010546387734, lng: 21.237340021558353 };
+        // The map, centered at
+        const map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: Presov,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: { lat: 49.0010546387734, lng: 21.237340021558353 }, 
+          map: map,
+          icon : "./img/marker.png"
+        });
+      }
+    </script>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHZWbuEJBuFO6pGNrqsYEBxK1DB6DiiZM&callback=initMap">
+    </script>
+
+</body>
+</html>
