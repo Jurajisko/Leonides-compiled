@@ -57,24 +57,7 @@
     <script src="js/jq-prx.js"></script>
     <script src="js/prx.js"></script>
 
-    <script>
-      // Initialize and add the map
-      function initMap() {
-        // The location of
-        const Presov = { lat: 49.0010546387734, lng: 21.237340021558353 };
-        // The map, centered at
-        const map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
-          center: Presov,
-        });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-          position: { lat: 49.0010546387734, lng: 21.237340021558353 }, 
-          map: map,
-          icon : "./img/marker.png"
-        });
-      }
-    </script>
+
 
     <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
     <script async
